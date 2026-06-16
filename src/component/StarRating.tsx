@@ -21,11 +21,21 @@ export default function StarRating(
     {maxRating = 10, 
     color = '#fcc419' , 
     size = 24,
+<<<<<<< HEAD
     clssName} : 
     {maxRating? : number,
          color? : string ,
           size? : number,
           clssName? : string}) {
+=======
+    clssName,
+    defaultRating = 0} : 
+    {maxRating? : number,
+         color? : string ,
+          size? : number,
+          clssName? : string,
+          defaultRating? : number}) {
+>>>>>>> 1d3f0b0 (Add defaultRating prop to StarRating component for initial rating state)
 
 
     const textStyle = {
@@ -36,7 +46,7 @@ export default function StarRating(
 
     }
 
-    const [rating, setRating] = useState(0);
+    const [rating, setRating] = useState(defaultRating);
 
     const [tempRating, setTempRating] = useState(0);
 
