@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { cursorTo } from "readline";
+import PropTypes from 'prop-types';
 
     const containerStyle = {
         display : 'flex',
@@ -13,7 +14,13 @@ import { cursorTo } from "readline";
         fontSize : '1.5rem',
     }
 
-    
+StarRating.propTypes = {
+    maxRating : PropTypes.number.isRequired,
+    color : PropTypes.string,
+    size : PropTypes.number,
+    className : PropTypes.string,
+    defaultRating : PropTypes.number
+}    
 
     
 
