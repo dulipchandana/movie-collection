@@ -17,9 +17,16 @@ import { cursorTo } from "readline";
 
     
 
-export default function StarRating({maxRating = 10, color = '#fcc419' , size = 24} : {maxRating? : number, color? : string , size? : number}) {
+export default function StarRating(
+    {maxRating = 10, 
+    color = '#fcc419' , 
+    size = 24,
+    clssName} : 
+    {maxRating? : number,
+         color? : string ,
+          size? : number,
+          clssName? : string}) {
 
-    
 
     const textStyle = {
         lineHeight : '1',
@@ -48,6 +55,7 @@ export default function StarRating({maxRating = 10, color = '#fcc419' , size = 2
                     onMouseLeave={() => setTempRating(0)}
                     color={color}
                     size={size}
+                    className={clssName}
                     />
                 ))}
             </div>
@@ -60,8 +68,8 @@ export default function StarRating({maxRating = 10, color = '#fcc419' , size = 2
 
 
 
-function Star({filled, onRate, onMouseEnter, onMouseLeave, color, size} : 
-    {filled : boolean, onRate: () => void, onMouseEnter: () => void, onMouseLeave: () => void, color: string, size: number}) {
+function Star({filled, onRate, onMouseEnter, onMouseLeave, color, size, className} : 
+    {filled : boolean, onRate: () => void, onMouseEnter: () => void, onMouseLeave: () => void, color: string, size: number, className? : string}) {
 
         const starStyle = {
         width : `${size}px`,
@@ -77,7 +85,8 @@ function Star({filled, onRate, onMouseEnter, onMouseLeave, color, size} :
         style={starStyle} 
         onClick={onRate} 
         onMouseEnter={onMouseEnter} 
-        onMouseLeave={onMouseLeave}>
+        onMouseLeave={onMouseLeave}
+        className={className}>
             {filled ? (
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
